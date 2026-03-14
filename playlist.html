@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library - My Music App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2 class="logo-text">MyMusic</h2>
+            <nav>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="library.html" style="color: var(--text-primary);">Your Library</a></li>
+                    <li id="create-playlist-btn"><i class="fa-solid fa-plus" style="margin-right: 8px;"></i>Create
+                        Playlist</li>
+                    <li
+                        style="margin-top: 20px; font-weight: bold; padding-left: 20px; font-size: 14px; text-transform: uppercase;">
+                        Playlists</li>
+                    <li><a href="starboy.html">Starboy</a></li>
+                    <li><a href="after-hours.html">After Hours</a></li>
+                    <li><a href="21.html">21</a></li>
+                    <li><a href="equals.html">= (Equals)</a></li>
+                    <li><a href="purpose.html">Purpose</a></li>
+                    <li><a href="liked-songs.html">Liked Songs</a></li>
+                </ul>
+                <ul id="custom-playlists" style="margin-top: 10px;"></ul>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="top-bar" style="justify-content: flex-start;">
+                <h2 style="font-weight: 400; font-size: 24px;">Your Playlists</h2>
+            </header>
+
+            <h1 id="playlist-title">Loading Playlist...</h1>
+
+            <section class="songs" id="playlist-songs-container">
+            </section>
+        </main>
+    </div>
+
+    <footer class="player">
+        <div class="now-playing">
+            <img id="current-cover" src="" alt="Album Cover" style="display: none;">
+            <div class="track-info">
+                <span id="current-title">Select a song to play</span>
+                <small id="current-artist"></small>
+            </div>
+        </div>
+
+        <div class="controls-container">
+            <div class="controls">
+                <button id="prev-btn" aria-label="Previous"><i class="fa-solid fa-backward-step"></i></button>
+                <button id="play-btn" aria-label="Play/Pause"><i class="fa-solid fa-play"></i></button>
+                <button id="next-btn" aria-label="Next"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" min="0" max="100" value="0" aria-label="Progress">
+                <span id="duration-time">0:00</span>
+            </div>
+        </div>
+
+        <div class="volume-container"
+            style="display: flex; align-items: center; gap: 8px; width: 30%; justify-content: flex-end; color: var(--text-secondary);">
+            <button id="mute-btn"
+                style="background: none; border: none; color: inherit; cursor: pointer; font-size: 16px;"><i
+                    class="fa-solid fa-volume-high" id="volume-icon"></i></button>
+            <input type="range" id="volume-slider" min="0" max="100" value="100" aria-label="Volume"
+                style="width: 100px; cursor: pointer;">
+        </div>
+        
+        <audio id="audio-player"></audio>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
